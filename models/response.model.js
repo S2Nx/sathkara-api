@@ -6,7 +6,7 @@ const responseSchema = new Schema({
         type: String,
         required:true
     },
-    pId:{
+    rId:{
         type: String,
         required: true
     },
