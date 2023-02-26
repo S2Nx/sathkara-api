@@ -6,7 +6,6 @@ const {
     deleteAdmin,
     updateAdmin
 } = require('../controllers/AdminController')
-const User = require('../models/admin.model')
 
 const router = express.Router()
 
