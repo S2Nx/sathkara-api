@@ -10,18 +10,18 @@ const {
 const router = express.Router()
 
 // Get all admins
-router.get('/',getAdmins)
+router.get('/all',getAdmins)
 
-// Get a single admin
-router.get('/:id',getAdmin)
+// Get a single admin by email
+router.get('/:aEmail',getAdmin)
 
-// POST a new admin
-router.post('/',createAdmin)
+// CREATE a new admin
+router.post('/add',createAdmin)
 
-// DELETE a  admin
-router.delete('/:id',deleteAdmin)
+// UPDATE a new admin by email
+router.patch('/update/:aEmail',updateAdmin)
 
-// UPDATE a new admin
-router.patch('/:id',updateAdmin)
+// DELETE a  admin by email
+router.delete('/delete/:aEmail',deleteAdmin)
 
 module.exports=router
