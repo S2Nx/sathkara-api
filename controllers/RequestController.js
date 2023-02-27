@@ -1,3 +1,4 @@
+const { Query } = require('mongoose');
 const Request = require('../models/requests.model');
 
 //get all request
@@ -20,13 +21,31 @@ const getrequest = async(req,res)=>{
     res.status(200).json(request)
 }
 
+//get request by location
+const getrequestbylocation = async(req,res)=>{
+    const {rProvince,rDistrict} = req.params
+        let request;
+
+        if(!rDistrict){
+            request = await Request.find({rProvince})
+        }
+        else{
+            request = await Request.find({rProvince,rDistrict})
+        }
+
+    if(!request){
+        return res.status(404).json({error:'request not found'})
+    }
+    res.status(200).json(request)
+}
+
 //create new request
 const createRequest = async(req,res)=>{
-    const {pharmaceutical, rCategory, rDescription, rExpDate, rLocation, rIsComplete, rUrgency, uId } = req.body;
+    const {pharmaceutical, rCategory, rDescription, rExpDate, rProvince, rDistrict, rCity, rIsComplete, rUrgency, uId } = req.body;
 
     //add document to db
     try{
-        const request = await Request.create({pharmaceutical, rCategory, rDescription, rExpDate, rLocation, rIsComplete, rUrgency, uId})
+        const request = await Request.create({pharmaceutical, rCategory, rDescription, rExpDate, rProvince, rDistrict, rCity, rIsComplete, rUrgency, uId})
         res.status(200).json(request)
     }catch(error){
         res.status(400).json({error: error.message})
@@ -64,6 +83,7 @@ const deleterequest = async(req,res)=>{
 module.exports={
     getRequests,
     getrequest,
+    getrequestbylocation,
     createRequest,
     updateRequest,
     deleterequest

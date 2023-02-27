@@ -15,7 +15,13 @@ const requestSchema = new Schema({
     rExpDate:{
         type: Date,
     },
-    rLocation:{
+    rProvince:{
+        type: String,
+    },
+    rDistrict:{
+        type: String,
+    },
+    rCity:{
         type: String,
     },
     rIsComplete:{

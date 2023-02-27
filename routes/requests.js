@@ -3,6 +3,7 @@ const express = require('express')
 const {
     getRequests,
     getrequest,
+    getrequestbylocation,
     createRequest,
     updateRequest,
     deleterequest
@@ -15,6 +16,10 @@ router.get('/all',getRequests)
 
 //get request by ID
 router.get('/:_id',getrequest)
+
+//get request by Province & District
+router.get('/location/:rProvince/',getrequestbylocation)
+router.get('/location/:rProvince/:rDistrict',getrequestbylocation)
 
 //create request
 router.post('/add',createRequest)
