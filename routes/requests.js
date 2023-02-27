@@ -14,15 +14,15 @@ const router = express.Router()
 router.get('/all',getRequests)
 
 //get request by ID
-router.get('/_id',getrequest)
+router.get('/:_id',getrequest)
 
 //create request
 router.post('/add',createRequest)
 
 //update request by ID
-router.patch('/update/_id',updateRequest)
+router.patch('/update/:_id',updateRequest)
 
 //delete request by ID
-router.delete('/delete/_id',deleterequest)
+router.delete('/delete/:_id',deleterequest)
 
 module.exports=router;

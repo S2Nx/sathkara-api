@@ -22,11 +22,11 @@ const getrequest = async(req,res)=>{
 
 //create new request
 const createRequest = async(req,res)=>{
-    const {pharmaceutical, rCategory, rDescription, rExpDate, rLocation, rIsComplete, rUrgency, rId } = req.body;
+    const {pharmaceutical, rCategory, rDescription, rExpDate, rLocation, rIsComplete, rUrgency, uId } = req.body;
 
     //add document to db
     try{
-        const request = await Request.create({pharmaceutical, rCategory, rDescription, rExpDate, rLocation, rIsComplete, rUrgency, rId})
+        const request = await Request.create({pharmaceutical, rCategory, rDescription, rExpDate, rLocation, rIsComplete, rUrgency, uId})
         res.status(200).json(request)
     }catch(error){
         res.status(400).json({error: error.message})

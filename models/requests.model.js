@@ -6,23 +6,23 @@ const requestSchema = new Schema({
         type: String,
         required:true,
     },
-    pCategory:{
+    rCategory:{
         type: String,
     },
-    pDescription:{
+    rDescription:{
         type: String,
     },
-    pExpDate:{
+    rExpDate:{
         type: Date,
     },
-    pLocation:{
+    rLocation:{
         type: String,
     },
-    pIsComplete:{
+    rIsComplete:{
         type: String,
         required: true
     },
-    pUrgency:{
+    rUrgency:{
         type: String,
     },
     uId: {
