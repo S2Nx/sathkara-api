@@ -6,7 +6,7 @@ const {createJWT} = require("../utils/auth.js");
 
 //user signup
 const signup = (req, res, next) => {
-    let { uName, uEmail, uPassword, uPasswordconfirm} = req.body;
+    let { uName, uEmail, uPassword, uPasswordconfirm, uCity} = req.body;
 
     let errors = [];
     if (uPassword != uPasswordconfirm) {
@@ -25,6 +25,7 @@ const signup = (req, res, next) => {
              uName: uName,
              uEmail: uEmail,
              uPassword: uPassword,
+             uCity,uCity
             });
             bcrypt.genSalt(10, function(err, salt) { bcrypt.hash(uPassword, salt, function(err, hash) {
                 if (err) throw err;
