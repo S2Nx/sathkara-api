@@ -20,9 +20,11 @@ const adminRoutes = require('./routes/admins.js');
 const userRoutes = require('./routes/users.js');
 const requestRoutes = require('./routes/requests');
 const responsesRoutes = require('./routes/responses');
+const authRoutes = require('./routes/auth');
 
 app.use('/admins',adminRoutes);
 app.use('/users',userRoutes);
+app.use('/users', authRoutes);
 app.use('/requests',requestRoutes);
 app.use('/responses',responsesRoutes);
 
