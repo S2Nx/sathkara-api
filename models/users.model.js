@@ -17,7 +17,16 @@ const userSchema = new Schema({
     uPhone:{
         type: String,
     },
-    uLocation:{
+    uCity:{
+        type: String,
+    },
+    uWhatsapp:{
+        type: String,
+    },
+    uFacebook:{
+        type: String,
+    },
+    uInstagram:{
         type: String,
     },
 },{timestamps:true});
