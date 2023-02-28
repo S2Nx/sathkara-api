@@ -12,13 +12,13 @@ const signup = (req, res, next) => {
     if (uPassword != uPasswordconfirm) {
         errors.push({ uPasswordconfirm: "confirmation password mismatch" });
     }  if (errors.length > 0) {
-        return res.status(422).json({ errors: errors });
+        return res.status(422).json({ success: false, errors: errors });
     }
 
     User.findOne({uEmail: uEmail})
      .then(user=>{
         if(user){
-           return res.status(422).json({ errors: [{ user: "email already exists" }] });
+           return res.status(422).json({ success: false, errors: [{ user: "email already exists" }] });
         }
         else {
             const user = new User({
@@ -38,6 +38,7 @@ const signup = (req, res, next) => {
                     })
                     .catch(err => {
                         res.status(500).json({
+                            success: false,
                             errors: [{ error: err }]
                         });
                     });
@@ -46,7 +47,8 @@ const signup = (req, res, next) => {
        }
     }).catch(err =>{
         res.status(500).json({
-          errors: [{ error: 'Something went wrong' }]
+            success: false,
+            errors: [{ error: 'Something went wrong' }]
         });
     })
 }
@@ -59,13 +61,14 @@ const signin = (req, res) => {
         .then(user => {
             if (!user) {
                 return res.status(404).json({
+                success: false,
                 errors: [{ user: "not found" }],
                 });
             }
             else {
                 bcrypt.compare(uPassword, user.uPassword).then(isMatch => {
                     if (!isMatch) {
-                        return res.status(400).json({ errors: [{ uPassword:"incorrect" }] 
+                        return res.status(400).json({ success: false, errors: [{ uPassword:"incorrect" }] 
                     });
                     }
                     let access_token = createJWT(
@@ -75,7 +78,7 @@ const signin = (req, res) => {
                     );
                     jwt.verify(access_token, process.env.TOKEN_SECRET, (err,decoded) => {
                     if (err) {
-                        res.status(500).json({ errors: err });
+                        res.status(500).json({ success: false, errors: err });
                     }
                     if (decoded) {
                         return res.status(200).json({
@@ -86,11 +89,11 @@ const signin = (req, res) => {
                     }
                 });
             }).catch(err => {
-                res.status(500).json({ errors: err });
+                res.status(500).json({ success: false, errors: err });
             });
             }
   }).catch(err => {
-     res.status(500).json({ errors: err });
+     res.status(500).json({ success: false, errors: err });
   });
 }
 
