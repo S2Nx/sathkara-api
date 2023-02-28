@@ -25,7 +25,7 @@ const requestSchema = new Schema({
         type: String,
     },
     rIsComplete:{
-        type: String,
+        type: Boolean,
         required: true
     },
     rUrgency:{

@@ -9,15 +9,16 @@ const userSchema = new Schema({
     uEmail:{
         type: String,
         required:true,
+        unique:true,
     },
     uPassword:{
         type: String,
         required:true,
     },
-    uPhone:{
+    uCity:{
         type: String,
     },
-    uCity:{
+    uPhone:{
         type: String,
     },
     uWhatsapp:{
