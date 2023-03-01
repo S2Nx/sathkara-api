@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "99519fab-c9db-4395-b4a2-38f38a1dead2",
+		"name": "sathkara-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "users/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/users/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/:_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/users/63fc1a4459621fe91b68cb1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"63fc1a4459621fe91b68cb1c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uName\":\"Kamal Pharmacy\",\r\n    \"uEmail\": \"kamalpharmacy@gmail.com\",\r\n    \"uPhone\": \"+94114785150\",\r\n    \"uCity\":\"Gampaha\",\r\n    \"uWhatsapp\": \"+94114785150\",\r\n    \"uFacebook\": \"www.facebook.com\",\r\n    \"uInstagram\": \"www.instagram.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/update/:_id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uCity\":\"Kaluthara\",\r\n    \"uWhatsapp\": \"+94777812364\",\r\n    \"uFacebook\": \"www.facebook.com\",\r\n    \"uInstagram\": \"www.instagram.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/update/63fc1a2459621fe91b68cb19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"update",
+								"63fc1a2459621fe91b68cb19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/delete/:_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/users/delete/63fc1a4459621fe91b68cb1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"delete",
+								"63fc1a4459621fe91b68cb1c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "admins/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/admins/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admins",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin/:aEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/admins/admin1@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admins",
+								"admin1@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aName\":\"Admin 3\",\r\n    \"aEmail\": \"admin3@gmail.com\",\r\n    \"aPassword\": \"admin2@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/admins/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admins",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin/update/:aEmail",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aPassword\": \"admin2@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/admins/update/admin2@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admins",
+								"update",
+								"admin2@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admins/delete/:aEmail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/admins/delete/admin3@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admins",
+								"delete",
+								"admin3@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "request",
+			"item": [
+				{
+					"name": "requests/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/requests/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"requests",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requests/:_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/requests/63fc5bf7174b4b8d26dad45a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"requests",
+								"63fc5bf7174b4b8d26dad45a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requests/location/:rProvince/:rDistrict",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/requests/location/Western/Colombo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"requests",
+								"location",
+								"Western",
+								"Colombo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requests/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pharmaceutical\":\"Spinraza\",\r\n    \"rCategory\": \"Pharmaceutical\",\r\n    \"rDescription\": \"Spinraza urgent for a new born baby!\",\r\n    \"rExpDate\":\"2023-03-08\",\r\n    \"rProvince\":\"Western\",\r\n    \"rDistrict\":\"Kaluthara\",\r\n    \"rCity\":\"Mathugama\",\r\n    \"rIsComplete\":\"False\",\r\n    \"rUrgency\":\"High\",\r\n    \"uId\":\"63fc1a2459621fe91b68cb19\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/requests/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"requests",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requests/update/:_id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rProvince\":\"Western\",\r\n    \"rDistrict\":\"Colombo\",\r\n    \"rCity\":\"Mt.Lavinia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/requests/update/63fc5a2a174b4b8d26dad458",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"requests",
+								"update",
+								"63fc5a2a174b4b8d26dad458"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requests/delete/:_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/requests/delete/63fc59f7174b4b8d26dad456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"requests",
+								"delete",
+								"63fc59f7174b4b8d26dad456"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "responses",
+			"item": [
+				{
+					"name": "responses/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/responses/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"responses",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "responses/:uId/:rId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/responses/63fc8cf6d3f905c36b2b12f3/63fc5bf7174b4b8d26dad45a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"responses",
+								"63fc8cf6d3f905c36b2b12f3",
+								"63fc5bf7174b4b8d26dad45a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "responses/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uId\":\"63fc8cf6d3f905c36b2b12f3\",\r\n    \"rId\": \"63fc5a2a174b4b8d26dad458\",\r\n    \"responseText\": \"Hi! I can provide the Asprin need for you. Contact me via my number\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/responses/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"responses",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "responses/update/:uId/:rId",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"responseText\": \"Hi! I have the requested Spinraza medicine, avalible at our pharmacy at Gampaha.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/responses/update/63fc8cf6d3f905c36b2b12f3/63fc5bf7174b4b8d26dad45a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"responses",
+								"update",
+								"63fc8cf6d3f905c36b2b12f3",
+								"63fc5bf7174b4b8d26dad45a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "responses/delete/:uId/:rId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/responses/delete/63fc8cf6d3f905c36b2b12f3/63fc5bf7174b4b8d26dad45a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"responses",
+								"delete",
+								"63fc8cf6d3f905c36b2b12f3",
+								"63fc5bf7174b4b8d26dad45a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "users/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uName\":\"Gammak Medicare\",\r\n    \"uEmail\": \"gammak@gmail.com\",\r\n    \"uPassword\": \"gammak123\",\r\n    \"uPasswordconfirm\": \"gammak123\",\r\n    \"uCity\": \"Gampaha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uEmail\": \"nimal@gmail.com\",\r\n    \"uPassword\": \"nimal123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
