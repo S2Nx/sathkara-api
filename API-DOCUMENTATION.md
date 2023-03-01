@@ -45,6 +45,7 @@ user object template
 {
     uName: , uEmail: , uPhone: , uCity: , uWhatsapp: , uFacebook, uInstagram
 }
+*also includes uPassword
 
 all users information
 GET http://localhost:5000/users/all
@@ -89,7 +90,7 @@ POST http://localhost:5000/users/signin
     return success: false + error
 ```
 
-#### Request(post)
+#### Request (medicine post)
 ```
 http://localhost:5000/requests/
 
