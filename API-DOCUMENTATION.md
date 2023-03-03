@@ -101,19 +101,19 @@ request object template
 
 all requests
 GET http://localhost:5000/requests/all
-    return all request information
+    return all request information + users
 
 single request by _id (rId)
 GET http://localhost:5000/requests/<_id>
-    return the request information
+    return the request information + user
 
 all request by province & district
 GET http://localhost:5000/requests/location/<province>/<district>
-    return all request informatipn for that province and district
+    return all request informatipn for that province and district + user
 
 all request by province only
 GET http://localhost:5000/requests/location/<province>
-    return all request information for that province
+    return all request information for that province + user
 
 add new request
 POST http://localhost:5000/requests/add
