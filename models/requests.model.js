@@ -32,7 +32,7 @@ const requestSchema = new Schema({
         type: String,
     },
     uId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     }
 },{timestamps:true});
