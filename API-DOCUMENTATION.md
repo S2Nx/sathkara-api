@@ -35,7 +35,8 @@ Database entites with their attributes (most all are string data type)
 - timestamps (auto generated from mongoDB; `createdAt` & `updatedAt`)
 
 ## API routes
-Base url: http://localhost:5000/
+Local url: http://localhost:5000/
+Hosted url: http://ec2-54-255-1-182.ap-southeast-1.compute.amazonaws.com:5000/
 
 #### Users
 ```
