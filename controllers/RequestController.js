@@ -17,6 +17,11 @@ const getRequests = async(req,res)=>{
         },
         { 
             $unwind: '$user'
+        },
+        {
+        $sort:{
+                createdAt: -1 
+        }
         }
     ]);
 
